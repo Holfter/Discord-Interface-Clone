@@ -1,3 +1,4 @@
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -62,6 +63,7 @@ for(let i = 0; i < tab.length; i++){
   })
 }
 
+//Get the current date
 function date(){
   var data = new Date(),
         dia  = data.getDate().toString().padStart(2, '0'),
@@ -72,25 +74,48 @@ function date(){
 
 var message = document.getElementById("message")
 var msgInput = document.getElementById("msg-input")
-var newChat = document.getElementsByClassName("chat-text")
+var newChat = document.getElementById("container-chat")
 
 message.addEventListener("submit", (e) => {
   e.preventDefault();
-  var div = document.createElement("div")
-  var img = document.createElement("img")
-  var messageDiv = document.createElement("div")
-  var p1 = document.createElement("p")
-  var p2 = document.createElement("p")
-  var span = document.createElement("span")
-  div.classList.add = "card-chat"
-  img.src = "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
-  p1.classList.add("user-name")
-  p2.innerText = msgInput.value
-  span.innerText = date()
-  p1.appendChild(span)
-  messageDiv.appendChild(p1)
-  messageDiv.appendChild(p2)
-  console.log(msgInput.value)
-  console.log(messageDiv.innerText)
-  message.reset();
+  //Create elements for the new message
+  if(msgInput.value !== ""){
+    var div = document.createElement("div")
+    var img = document.createElement("img")
+    var messageDiv = document.createElement("div")
+    var p1 = document.createElement("p")
+    var p2 = document.createElement("p")
+    var span = document.createElement("span")
+
+    div.classList.add('card-chat')
+    p1.classList.add("user-name")
+    
+    img.src = "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+    p1.innerText = "User"
+    p2.innerText = msgInput.value
+    span.innerText = date()
+    p1.appendChild(span)
+
+    messageDiv.appendChild(p1)
+    messageDiv.appendChild(p2)
+    div.appendChild(img)
+    div.appendChild(messageDiv)
+    newChat.appendChild(div)
+
+    //Keep overflow div scrolled to bottom unless user scrolls up
+    window.scrollTo(0,document.querySelector(".server-chat").scrollHeight);
+    newChat.scrollTop = newChat.scrollHeight;
+
+    //Reset the form input field text to empty
+    message.reset();
+  }
 })
+
+//Change the mic and headphones icons color to red when clicked
+var mutes = document.querySelectorAll(".mute");
+for(let i = 0; i < mutes.length; i++){
+  mutes[i].addEventListener("click",function(){
+    mutes[i].classList.toggle("muted")
+  })
+}
+

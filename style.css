@@ -145,10 +145,10 @@ hr{
     margin-right:10px;
 }
 
+
 .server-bar-footer .icons i{
     margin:0 5px;
     cursor:pointer;
-    color:rgb(138, 138, 138)
 }
 
 .server-bar-footer p {
@@ -265,6 +265,27 @@ hr{
     cursor:pointer;
 }
 
+.right-bar-members .member:nth-child(even) div:after{
+    content:"";
+    width:13px;
+    height:13px;
+    background:#df0000;
+    border-radius:50%;
+    position:absolute;
+    bottom:2px;
+    right:10px;
+}
+.right-bar-members .member:nth-child(odd) div:after{
+    content:"";
+    width:13px;
+    height:13px;
+    background:#00b90f;
+    border-radius:50%;
+    position:absolute;
+    bottom:2px;
+    right:10px;
+}
+
 .member:hover{
     background:rgb(58, 58, 58);
     border-radius:50px;
@@ -337,7 +358,7 @@ hr{
 .chat-text{
     overflow-y: auto;
     margin-top:0px;
-    padding: 0 50px 0 50px;
+    padding: 0 50px 60px 50px;
     align-self: flex-start;
     width: 100%;;
 }
@@ -472,6 +493,8 @@ hr{
     border-radius:10px;
 }
 
+.right-circle{position:relative;}
+
 .right-circle img{
     width:35px;
     height:35px;
@@ -483,3 +506,20 @@ hr{
     display: flex;
     width:100%;
 }
+
+.muted{
+    position:relative;
+    color:red;
+}
+.muted::after{
+    content:"";
+    width:2px;
+    height:20px;
+    background:red;
+    border:0.5px solid #292b2f;
+    transform: rotate(45deg);
+    position:absolute;
+    left:5px;
+    top:-1px;
+}
+
