@@ -200,6 +200,18 @@ hr{
     align-self: center;
 }
 
+.main-chat{
+    word-wrap: break-word;
+    display: flex;
+    align-items:center;
+    background:#36393f;
+    height:60px;
+    width: 100%;
+    position:absolute;
+    bottom:0;
+    justify-content: center;
+}
+
 .chat-input input{
     height:30px;
     background:#40444b;
