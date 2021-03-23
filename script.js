@@ -69,7 +69,7 @@ function date(){
         dia  = data.getDate().toString().padStart(2, '0'),
         mes  = (data.getMonth()+1).toString().padStart(2, '0'), //+1 pois no getMonth Janeiro começa com zero.
         ano  = data.getFullYear();
-  return dia+"/"+mes+"/"+ano;
+  return mes+"/"+dia+"/"+ano;
 }
 
 var message = document.getElementById("message")
@@ -90,7 +90,7 @@ message.addEventListener("submit", (e) => {
     div.classList.add('card-chat')
     p1.classList.add("user-name")
     
-    img.src = "https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png"
+    img.src = "https://freepikpsd.com/wp-content/uploads/2019/10/anthrocon-twitter-quot-discord-user-wanna-21-Transparent-Images.png"
     p1.innerText = "User"
     p2.innerText = msgInput.value
     span.innerText = date()
