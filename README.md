@@ -1,3 +1,5 @@
+# [This project is old and does not reflect my level of knowledge today.]
+
 # Discord-Interface-Clone
 
 Made with HTML, CSS and Javascript only
